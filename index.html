@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>LienzoEditor</title>
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://bootswatch.com/4/yeti/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <link href="/open-iconic/font/css/open-iconic.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.9/ace.js" type="text/javascript" charset="utf-8"></script>
+
+  <div class="container-fluid" id='editor'>
+    <div class="row" id='editorRow'>
+      <div class="col-md-6 noPadding ">
+
+        <div id="barraEjecucion" class="container ventana">
+          <div class="btn wh" data-toggle="tooltip" data-html="true" title="<b>PLAY</b>">
+            <span class="oi" data-glyph="media-play"></span>
+          </div>
+          <div class="btn wh" data-toggle="tooltip" data-html="true" title="<em>Generate</em> <u>json</u>">
+            <span class="oi" data-glyph="cog"></span>
+          </div>
+          <div class="btn wh" data-toggle="tooltip" data-html="true" title="<em>Tooltip</em> <u>with</u> <b>HTML</b>">
+            <span class="oi" data-glyph="box"></span>
+          </div>
+        </div>
+
+        <div id="ventanaDeJuego" class="ventana">
+
+        </div>
+
+
+        <div id="loger">
+          <div class="" style="border-bottom: 1px solid white;">LOGS</div>
+          <span style="color:cyan !important;">[INFO] This is an info log</span>
+          <br>
+          <span style="color:RED !important;">[DANGER] This is an danger log</span>
+          <br>
+          <span style="color:green !important;">[ACCION] This is an accion log</span>
+          <br>
+          <span style="color:yellow !important;">[WARNING] This is an warning log</span>
+          <br>
+          <span>This is an normal log</span>
+          <br>
+          <span>This is an normal log</span>
+          <br>
+          <span>This is an normal log</span>
+          <br>
+          <span>This is an normal log</span>
+          <br>
+          <span>This is an normal log</span>
+          <br>
+          <span>This is an normal log</span>
+          <br>
+          <span>This is an normal log</span>
+        </div>
+
+      </div>
+      <div class="col-md-3 noPadding ventana card">
+
+
+
+
+
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">New game object</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+
+              <form>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Name</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Name">
+                    <small id="emailHelp" class="form-text text-muted">Will be use to find this later.</small>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Tags</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Separete the tags by comma.">
+                    <small id="emailHelp" class="form-text text-muted">Separete the tags by comma.</small>
+                  </div>
+                  <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Mark me</label>
+                  </div>
+                </form>
+
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-success">Create</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal fade" id="scriptModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog script-modal" role="document">
+              <div class="modal-content script-modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Script</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+           
+     
+      
+                        <div id="textEditor">
+function foo(items) {
+  var x = "All this is syntax highlighted";
+  return x;
+}</div>
+
+      
+
+              </div>
+            </div>
+          </div>
+
+
+        <div id="gameObjects" class="listOfObjects">
+
+
+          <p class="title">Objetos de juego</p>
+          <hr>
+
+          <div class="component gameOb">
+            <small class="navbar-brand">Character</small>
+            <button class="btn btn-success my-2 my-sm-0" type="submit">
+              <span class="oi" data-glyph="cog"></span>
+              Editar
+            </button>
+            <button class="btn btn-success">
+              <span class="oi" data-glyph="trash"></span>
+              Remover
+            </button>
+          </div>
+          <hr>
+          <div class="component gameOb">
+            <small class="navbar-brand">Grass</small>
+            <button class="btn btn-success my-2 my-sm-0" type="submit">
+              <span class="oi" data-glyph="cog"></span>
+              Editar
+            </button>
+            <button class="btn btn-success">
+              <span class="oi" data-glyph="trash"></span>
+              Remover
+            </button>
+          </div>
+          <hr>
+          <div class="component gameOb">
+            <small class="navbar-brand">Clouds</small>
+            <button class="btn btn-success my-2 my-sm-0" type="submit">
+              <span class="oi" data-glyph="cog"></span>
+              Editar
+            </button>
+            <button class="btn btn-success">
+              <span class="oi" data-glyph="trash"></span>
+              Remover
+            </button>
+          </div>
+          <hr>
+          <div class="component gameOb">
+            <small class="navbar-brand">Ground</small>
+            <button class="btn btn-success my-2 my-sm-0" type="submit">
+              <span class="oi" data-glyph="cog"></span>
+              Editar
+            </button>
+            <button class="btn btn-success">
+              <span class="oi" data-glyph="trash"></span>
+              Remover
+            </button>
+          </div>
+
+          <hr>
+
+          <!-- Button trigger modal -->
+          <button type="button" class="btn btn-block btn-success marginBottom" data-toggle="modal" data-target="#exampleModal">
+            <small>
+              <span class="oi" data-glyph="plus"></span>
+            </small>
+            <br> Crear nuevo objeto de juego
+          </button>
+
+        </div>
+
+      </div>
+      <div id="objeto" class="col-md-3 noPadding ventana card container">
+
+
+
+
+        <div class="listOfObjects">
+          <p class="title">Componentes de objeto de juego</p>
+
+
+          <hr>
+
+
+
+
+          <div class="component ">
+            <p class="componentTitle">Transform</p>
+
+
+            <form>
+              <div class="input-group input-group-sm mb-1">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="inputGroup-sizing-sm">position</span>
+                </div>
+                <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+              </div>
+              <div class="input-group input-group-sm mb-1 ">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="inputGroup-sizing-sm">rotation</span>
+                </div>
+                <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+              </div>
+              <div class="input-group input-group-sm mb-1 ">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="inputGroup-sizing-sm">scale</span>
+                </div>
+                <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+              </div>
+
+            </form>
+            <button class="btn btn-success btn-block">
+              <span class="oi" data-glyph="trash"></span> Remover </button>
+          </div>
+
+
+          <hr>
+
+
+
+
+          <div class="component ">
+            <p class="componentTitle">Script</p>
+
+            <button type="button" class="btn btn-block btn-success marginBottom" data-toggle="modal" data-target="#scriptModal">
+                <span class="oi" data-glyph="cog"></span> Editar
+            </button>
+
+            <button class="btn btn-success btn-block">
+              <span class="oi" data-glyph="trash"></span> Remover </button>
+          </div>
+
+
+          <hr>
+          <div class="component ">
+            <p class="componentTitle">Transform</p>
+
+
+            <form>
+              <div class="input-group input-group-sm mb-1">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="inputGroup-sizing-sm">position</span>
+                </div>
+                <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+              </div>
+              <div class="input-group input-group-sm mb-1 ">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="inputGroup-sizing-sm">rotation</span>
+                </div>
+                <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+              </div>
+              <div class="input-group input-group-sm mb-1 ">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="inputGroup-sizing-sm">scale</span>
+                </div>
+                <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+              </div>
+
+            </form>
+            <button class="btn btn-success btn-block">
+              <span class="oi" data-glyph="trash"></span> Remover </button>
+          </div>
+          <hr>
+
+
+
+          <div class="component ">
+            <p class="componentTitle">Transform</p>
+
+
+            <form>
+              <div class="input-group input-group-sm mb-1">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="inputGroup-sizing-sm">position</span>
+                </div>
+                <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+              </div>
+              <div class="input-group input-group-sm mb-1 ">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="inputGroup-sizing-sm">rotation</span>
+                </div>
+                <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+              </div>
+              <div class="input-group input-group-sm mb-1 ">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="inputGroup-sizing-sm">scale</span>
+                </div>
+                <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+              </div>
+
+            </form>
+            <button class="btn btn-success btn-block">
+              <span class="oi" data-glyph="trash"></span> Remover </button>
+          </div>
+
+          <hr>
+
+          <div class="dropdown m5">
+            <button class="btn btn-success dropdown-toggle btn-block" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">
+              Agregar componente
+            </button>
+
+            <div class="dropdown-menu btn-block" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </div>
+
+
+
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="dist/bundle.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <script>
+    $(function () {
+      $('[data-toggle="tooltip"]').tooltip()
+    })
+  </script>
+  <script>
+    var editor = ace.edit("textEditor");
+    editor.setTheme("ace/theme/monokai");
+    editor.session.setMode("ace/mode/javascript");
+  </script>
+</body>
+
+</html>

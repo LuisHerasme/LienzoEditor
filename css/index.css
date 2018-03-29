@@ -1,0 +1,306 @@
+
+* {
+  font-family: consolas !important;
+}
+#textEditor {
+  width: 100%;
+  height: 100%;
+  font-size: 16px;
+}
+body, html {
+  margin: 0px;
+  height: 100%;
+  font-size: 14px !important;
+}
+
+.ventana {
+  text-align: center;
+  background: #f6f6f6;
+}
+
+.script-modal {
+    max-width: 90% !important;
+    height: 90% !important;
+    margin: 1.75rem auto;
+}
+.script-modal-content {
+  height: 90% !important;
+}
+.component {
+  background: #f6f6f6;
+  padding: 3px 5px;
+}
+
+.componentTitle {
+  margin-bottom: 0px !important;
+}
+
+hr {
+  -webkit-margin-before: 5px !important;
+  -webkit-margin-after: 5px !important;
+}
+
+.list-group-item:last-child {
+  margin-bottom: 0;
+  border-bottom-right-radius: 0rem !important;
+  border-bottom-left-radius: 0rem !important;
+}
+
+.list-group-item {
+  padding: 5px !important;
+  cursor: pointer !important;
+}
+
+.gameOb {
+  margin: 5px !important;
+}
+
+.noMb {
+  margin-bottom: 0px !important;
+}
+
+
+.input-group-text {
+  background-color: #eef2f3 !important;
+}
+
+.title {
+  font-family: 'Roboto', sans-serif;
+  color: #222 !important;
+  font-size: 16px;
+  font-weight: 400;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-bottom: 0px !important;
+}
+
+input, textarea, select, button, meter, progress {
+  -webkit-writing-mode: none;
+}
+
+.m5 {
+  margin-bottom: 5px !important;
+}
+
+.listOfObjects {
+  text-align: center !important;
+  border-radius: 3px;
+  text-align: left;
+  height: 100%;
+  padding: 6px;
+	background: #f6f6f6 !important;
+}
+
+
+
+#ventanaDeJuego {
+  background-image: url('../assets/logo.png');
+  background-size: 100%;
+  border: none;
+  height: 75%;
+  width: 100%;
+  background-color: grey;
+  background-position-y: 50%;
+  background-position-x: 50%;
+  background-repeat: no-repeat;
+}
+
+.btn-success {
+  background-color: rgb(238, 242, 243) !important;
+  color: rgb(73, 80, 87) !important;
+  border-color: rgb(204, 204, 204) !important;
+}
+
+#loger {
+  border: none;
+  height: 20%;
+  width: 100%;
+  background-color: black !important;
+  color: white;
+  padding: 10px;
+  overflow-y: scroll;
+}
+
+#objetosDeJuego {
+  height: 100%;
+}
+
+#objeto {
+  height: 100%;
+}
+
+#barraEjecucion{
+  height: 5%;
+  border-bottom: 1px solid rgba(0,0,0,0.125);
+  padding:5px;
+}
+
+.noMargin {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.marginBottom {
+  margin-top: 0px;
+  margin-bottom: 5px;
+}
+
+#editor{
+  height: 100%;
+}
+
+#editorRow{
+  height: 100%;
+}
+
+.noPadding {
+  padding: 0px !important;
+}
+
+.mTop {
+  margin-top: 5px !important;
+}
+
+
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+
+body.linked .button, body.linked h1 {
+  opacity: .3;
+  -webkit-transition: opacity 300ms linear;
+  transition: opacity 300ms linear;
+}
+
+body.linked p {
+  color: var(--color-smoke);
+  -webkit-transition: color 300ms linear;
+  transition: color 300ms linear;
+}
+
+h1 {
+  text-align: center;
+  -webkit-transition: opacity 300ms linear;
+  transition: opacity 300ms linear;
+  color: var(--color-dark);
+  font-family: var(--font-face);
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.wrap {
+  height: 100%;
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+}
+
+.button {
+  font-family: 'Roboto', sans-serif;
+  
+  padding: 5px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000 !important;
+  background-color: #fff;
+  border: none;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;  
+  outline: none;
+  background-color: gainsboro;
+  transform: translateY(-1px);
+  border-radius: 3px;
+}
+
+.button-green {
+  padding: 10px;
+  font-family: 'Roboto', sans-serif;
+
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000 !important;
+  background-color: #fff;
+  border: none;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  border-radius: 45px;
+  background-color: #2EE59D;
+  box-shadow: 0px 2px 2px rgba(46, 229, 157, 0.4);
+  transform: translateY(-1px);
+  border-radius: 0px;
+}
+  
+.button-green:hover {
+  transition: 500ms;
+  background-color: #82E0AA !important;
+}
+
+.botonRed {
+  display:inline-block;
+	cursor: pointer;
+	color:#000;
+	font-size: 12px;
+	padding:0px 4px;
+}
+
+.botonRed:active {
+	position:relative;
+	top:1px;
+}
+
+.myButton {
+	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffffff), color-stop(1, #f6f6f6));
+	background:-moz-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+	background:-webkit-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+	background:-o-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+	background:-ms-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+	background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f6f6f6',GradientType=0);
+	background-color:#ffffff;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	cursor:pointer;
+	color:#666666;
+	font-family:Arial;
+	font-size: 12px;
+	font-weight:bold;
+	padding:2px 16px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+}
+
+.myButton:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f6f6f6), color-stop(1, #ffffff));
+	background:-moz-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+	background:-webkit-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+	background:-o-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+	background:-ms-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+	background:linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f6f6f6', endColorstr='#ffffff',GradientType=0);
+	background-color:#f6f6f6;
+}
+
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+        
